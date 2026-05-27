@@ -3,17 +3,23 @@ export default function Home() {
     {
       name: "SeaBob F5",
       price: "$12,500",
-      kwd: "3840 KWD",
+      kwd: "≈ 3,850 KWD",
+      image:
+        "https://images.seabob.com/seabob-f5.jpg",
+    },
+    {
+      name: "SeaSucker Rack",
+      price: "$399",
+      kwd: "≈ 122 KWD",
+      image:
+        "https://www.seasucker.com/cdn/shop/files/rack.jpg",
     },
     {
       name: "Fishing Smart Sonar",
       price: "$149",
-      kwd: "45 KWD",
-    },
-    {
-      name: "Jet Board",
-      price: "$899",
-      kwd: "276 KWD",
+      kwd: "≈ 45 KWD",
+      image:
+        "https://m.media-amazon.com/images/I/61 sonar.jpg",
     },
   ];
 
@@ -21,35 +27,24 @@ export default function Home() {
     <main
       style={{
         background: "#07111f",
-        color: "white",
         minHeight: "100vh",
-        padding: "40px",
+        color: "white",
+        padding: "30px",
         fontFamily: "Arial",
       }}
     >
-      <h1
-        style={{
-          fontSize: "50px",
-          marginBottom: "10px",
-        }}
-      >
+      <h1 style={{ fontSize: "42px", marginBottom: "10px" }}>
         🌊 MarinePulse AI
       </h1>
 
-      <p
-        style={{
-          opacity: 0.7,
-          marginBottom: "40px",
-        }}
-      >
-        AI Marine Trends Dashboard
+      <p style={{ color: "#8ca3c7", marginBottom: "40px" }}>
+        AI Marine Trend Prediction Platform
       </p>
 
       <div
         style={{
           display: "grid",
-          gridTemplateColumns:
-            "repeat(auto-fit,minmax(250px,1fr))",
+          gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))",
           gap: "20px",
         }}
       >
@@ -57,28 +52,53 @@ export default function Home() {
           <div
             key={index}
             style={{
-              background: "#0f172a",
-              padding: "20px",
+              background: "#0d1b2a",
               borderRadius: "20px",
+              overflow: "hidden",
+              border: "1px solid #18324d",
             }}
           >
-            <h2>{item.name}</h2>
-
-            <p>{item.price}</p>
-
-            <p>{item.kwd}</p>
-
-            <button
+            <img
+              src={item.image}
+              alt={item.name}
               style={{
-                padding: "10px 20px",
-                borderRadius: "10px",
-                border: "none",
-                cursor: "pointer",
-                marginTop: "10px",
+                width: "100%",
+                height: "220px",
+                objectFit: "cover",
               }}
-            >
-              View Product
-            </button>
+            />
+
+            <div style={{ padding: "20px" }}>
+              <h2>{item.name}</h2>
+
+              <p
+                style={{
+                  color: "#58a6ff",
+                  fontSize: "22px",
+                  marginTop: "10px",
+                }}
+              >
+                {item.price}
+              </p>
+
+              <p style={{ color: "#9fb3c8" }}>{item.kwd}</p>
+
+              <button
+                style={{
+                  marginTop: "15px",
+                  width: "100%",
+                  padding: "12px",
+                  borderRadius: "12px",
+                  border: "none",
+                  background: "#1f6feb",
+                  color: "white",
+                  cursor: "pointer",
+                  fontSize: "16px",
+                }}
+              >
+                View Product
+              </button>
+            </div>
           </div>
         ))}
       </div>
